@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Next.js 16 needs Node 20+
+  NODE_VERSION = "20"
+  # Avoid problems with Drizzle / pg native binaries (not actually used at runtime but listed in deps)
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Netlify's official Next.js runtime adapter — required for Next.js 16
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
