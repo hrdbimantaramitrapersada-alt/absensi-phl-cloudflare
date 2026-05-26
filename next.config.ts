@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Allow images from Cloudinary (kalau suatu saat pakai next/image)
-  Output:'export'
+  output: 'export', // <-- Pastikan 'o' kecil dan ada koma (,) di ujungnya!
   images: {
-    unoptimized: true
+    unoptimized: true, // <-- Pastikan ada koma (,) di ujungnya!
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
